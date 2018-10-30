@@ -1,0 +1,8 @@
+import requests
+from bs4 import BeautifulSoup
+
+wyx = requests.get("https://movie.douban.com/")
+bj = BeautifulSoup(wyx.content, "lxml")
+blist  = bj.select('img')
+for x in blist:
+    print(x)
